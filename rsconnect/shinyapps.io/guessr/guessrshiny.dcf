@@ -1,0 +1,10 @@
+name: guessrshiny
+title:
+username:
+account: guessr
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 343478
+bundleId: 1375795
+url: https://guessr.shinyapps.io/guessrshiny/
+when: 1526424004.00027
