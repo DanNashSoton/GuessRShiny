@@ -128,10 +128,10 @@ server <- function(input, output) {
   
   observeEvent(input$click, {
     result <- sample_test(values$test,input$trials,input$know)
-    meanres <- mean(result)
-    medres <- median(result)
-    modres <- modal(result)
-    varres <- round(variance(result),digits = 3)
+    meanres <- round(mean(result),3)
+    medres <- round(median(result),3)
+    modres <- round(modal(result),3)
+    varres <- round(variance(result),3)
     resultsmat <- matrix(c("Mean","Median","Mode","Varience",meanres,medres,modres,varres),ncol = 2)
     colnames(resultsmat) <- c("Statistic","Value")
     output$hist <- renderPlot(plot(result))
