@@ -5,6 +5,6 @@ account: guessr
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 343478
-bundleId: 1375795
+bundleId: 1377117
 url: https://guessr.shinyapps.io/guessrshiny/
-when: 1526424004.00027
+when: 1526485461.01277

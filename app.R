@@ -131,17 +131,18 @@ server <- function(input, output) {
     meanres <- mean(result)
     medres <- median(result)
     modres <- modal(result)
-    varres <- variance(result)
+    varres <- round(variance(result),digits = 3)
     resultsmat <- matrix(c("Mean","Median","Mode","Varience",meanres,medres,modres,varres),ncol = 2)
     colnames(resultsmat) <- c("Statistic","Value")
     output$hist <- renderPlot(plot(result))
     output$stats <- renderTable(resultsmat)
     
     observeEvent(input$clickr, {
-      belres <- below_percentage(result,input$min,inclusive = FALSE)
-      betres <- between_percentage(result,input$min,input$max)
-      abores <- pass_percentage(result, input$max, inclusive  = FALSE)
+      belres <- round(below_percentage(result,input$min,inclusive = FALSE),3)
+      betres <- round(between_percentage(result,input$min,input$max),3)
+      abores <- round(pass_percentage(result, input$max, inclusive  = FALSE),3)
       rangemat <- matrix(c("Below Range","Inside Range (Inclusive)","Above Range",belres,betres,abores),ncol = 2)
+      colnames(rangemat) <- c("Range","Percentile")
       output$Ranges <- renderTable(rangemat)
     })
     
